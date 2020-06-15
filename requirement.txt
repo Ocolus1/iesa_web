@@ -1,0 +1,16 @@
+autopep8==1.5.3
+click==7.1.2
+Flask==1.1.2
+flask-msearch==0.2.9
+Flask-SQLAlchemy==2.4.3
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+mysql==0.0.2
+mysql-connector==2.2.9
+passlib==1.7.2
+pycodestyle==2.6.0
+pywin32==227
+SQLAlchemy==1.3.17
+toml==0.10.1
+Werkzeug==1.0.1

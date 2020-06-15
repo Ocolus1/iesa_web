@@ -1,0 +1,164 @@
+{% extends "layout.htm" %}
+
+{% set active_page = "event" %}
+
+{% block body %}
+<style>
+    #first-div {
+        background-color: #fff;
+        color: #333;
+        font-family: Poppins;
+        font-style: normal;
+    }
+
+    .team_img {
+        width: 100%;
+        max-width: 100%;
+        height: 28rem;
+    }
+    .carousel-caption {
+        position: absolute;
+        top: 70%;
+        transform: translateY(-50%);
+    }
+
+    .carousel-caption h2 {
+        font-size: 300%;
+        font-weight: 500;
+        text-shadow: 1px 1px 15px #000;
+    }
+    .card {
+        color: black;
+        text-decoration: none;
+        background-color: white;
+        margin: 1rem;
+    }
+    .card img {
+        width: 90%;
+        height: 16rem;
+        /*width: auto;
+        height: auto;*/
+        padding: .5rem;
+        margin: 1rem;
+        max-width: 100%;
+        transition: transform 2s;
+    }
+    .card img:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+    .padding {
+        padding-bottom: 3rem;
+    }
+    i {
+        font-size: 75%;
+        font-weight: 200;
+        color: #37a3e8;
+    }
+
+    .pp {
+        font-size: 75%;
+        font-weight: 200;
+        color: rgb(194, 192, 192);
+    }
+    .card-title {
+        color: #333333;
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
+    @media screen and (max-width: 992px) {
+        .team_img {
+            width: 100%;
+            height: 25rem;
+        }
+        .card img {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .card img {
+            width: auto;
+            height: auto;
+        }
+        .team_img {
+            height: 20rem;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .team_img {
+            height: 17rem;
+        }
+    }
+</style>
+
+<div id="first-div">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./static/img/events.jpg" class="team_img" alt="team photo">
+                <div class="carousel-caption d-none d-sm-block">
+                    <h2>IESA Events</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pt-5 padding">
+        <div class="row padding">
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/rave.jpg" class="card-img-top im" alt="Rave picture">
+                    <div class="card-body">
+                        <p class="card-title font-weight-bold">Rave Alte</p>
+                        <p class="card-text pp">
+                            <i class="far fa-clock"></i>
+                            9th November, 2019
+                            <i class="fas fa-map-marker-alt"></i>
+                            Abdul Salaam Hall
+                        </p>
+                        <a href="#" class="btn btn-outline-dark rounded-pill executives_links">CLOSED</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/conference.jpg" class="card-img-top im" alt="Conference picture">
+                    <div class="card-body">
+                        <p class="card-title font-weight-bold">IESA Conference</p>
+                        <p class="card-text pp">
+                            <i class="far fa-clock"></i>
+                            28th November, 2019
+                            <i class="fas fa-map-marker-alt"></i>
+                            Lpi Hub, Unibadan
+                        </p>
+                        <a href="#" class="btn btn-outline-dark rounded-pill executives_links">CLOSED</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/challenge.jpg" class="card-img-top im" alt="Challenge picture">
+                    <div class="card-body">
+                        <p class="card-title font-weight-bold">IESA Challenge</p>
+                        <p class="card-text pp">
+                            <i class="far fa-clock"></i>
+                            28th November, 2019
+                            <i class="fas fa-map-marker-alt"></i>
+                            Lpi Hub, Unibadan
+                        </p>
+                        <a href="#" class="btn btn-outline-dark rounded-pill executives_links">CLOSED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

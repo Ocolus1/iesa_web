@@ -1,0 +1,94 @@
+<style>
+    .navbar-brand {
+        margin-left: 5rem;
+    }
+    nav {
+        background-color: #ffffff;
+        margin: 0;
+    }
+    .nav-item {
+        margin: 0 1rem;
+        font-family: DroidSerif;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
+    /*.nav-item:active {
+        color: #00aaad;
+    }
+
+    .nav-item:hover {
+        color: #00aaad;
+    }*/
+
+    #sticky a {
+        color: white;
+        background-color: #0e1a40;
+    }
+    /* Media Queries */
+    @media screen and (max-width: 992px) {
+        #navbar-brand {
+            background-color: green;
+            margin-left: 2rem;
+        }
+        .nav-item {
+            margin: 0 .4rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        #navbar-brand {
+            background-color: blue;
+            margin-left: 0;
+        }
+        .navbar-toggler-icon {
+            font-size: 75%;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        #navbar-brand {
+            background-color: yellow;
+        }
+
+        .navbar-bttn {
+            display: block;
+        }
+
+    }
+</style>
+<p id="top" ></p>
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="navbar-brand" href="/" id="navbar-brand">
+        <img src="{{url_for('static',filename = 'img/iesa_logo.png')}}" alt="main logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mx-auto">
+            {% set navbar_menus = [
+                        ('/', 'home', 'Home'),
+                        ('/executives', 'executives', 'Executives'),
+                        ('/about', 'about', 'About'),
+                        ('/gallery', 'gallery', 'Gallery'),
+                        ('/event', 'event', 'Event'),
+                        ('/articles', 'articles', 'Blog'),
+                        ('/alumni_dashboard', 'alumni', 'Alumni'),
+                        ] -%}
+            {% set active_page = active_page|default('home') -%}
+            {% for href, id, caption in navbar_menus %}
+            <li class="nav-item">
+                <a class="nav-link {% if id == active_page %} active {% endif%}" href="{{ href }}">
+                    {{ caption }}
+                </a>
+            </li>
+            {% endfor %}
+            
+        </ul>
+    </div>
+</nav>
+<div class=" fixed-bottom" id="sticky">
+    <a class="btn float-right m-3" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+</div>

@@ -1,0 +1,147 @@
+{% extends "layout.htm" %}
+
+{% set active_page = "articles" %}
+
+{% block body %}
+<style>
+    .team_img {
+        width: 100%;
+        max-width: 100%;
+        height: 20rem;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .carousel-caption h2 {
+        font-size: 300%;
+        font-weight: 500;
+        text-shadow: 1px 1px 15px #000;
+    }
+
+    .card {
+        color: black;
+        text-decoration: none;
+        margin: 1rem;
+    }
+
+    .card img {
+        width: auto;
+        height: auto;
+        padding: .5rem;
+        margin: 1rem;
+        max-width: 100%;
+        transition: transform 2s;
+    }
+
+    .card img:hover {
+        -ms-transform: scale(1.1);
+        /* IE 9 */
+        -webkit-transform: scale(1.1);
+        /* Safari 3-8 */
+        transform: scale(1.1);
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+
+    .padding {
+        padding-bottom: 3rem;
+    }
+
+    i {
+        font-size: 75%;
+        font-weight: 200;
+        color: #39FF14;
+    }
+
+    .card-text {
+        font-size: 75%;
+        font-weight: 200;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 992px) {
+        .team_img {
+            width: auto;
+            height: 20rem;
+        }
+
+        .card img {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .card img {
+            width: auto;
+            height: auto;
+        }
+
+        .team_img {
+            height: 15rem;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .team_img {
+            height: 13rem;
+        }
+    }
+</style>
+
+<div id="first-div">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/img/page-title (1).jpg" class="team_img" alt="team photo">
+                <div class="carousel-caption">
+                    <h2>IE Press Organisation</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pt-5 padding">
+        <h3 class="text-center">Recent Blog Post</h3>
+        <div class="row padding">
+            {% for article in articles %}
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img class="card-img-top im" src="{{ url_for('send_image', filename=article.image) }}"
+                        alt={{article.image}}>
+                    <div class="card-body">
+                        <h5 class="card_h1"><a href="{{url_for('article', id=article.id)}}"
+                                target="_blank">{{ article.title}}</a></h5>
+                        <p class="card-text">
+                            <span><i class=""></i>{{article.date_created.strftime('%B %d, %Y')}}</span>
+                            <span><a href="#"><i class=""></i>
+                                    {% for art in article.tags%}{{art.name}}{% endfor %}
+                                </a></span>
+                            <span><i class=""></i>{{article.comments}}Comments</span>
+                            <span><i class=""></i>{{article.views}}views</span>
+                        </p>
+                        <p class="">{{ article.body[0:120] | safe}}</p>
+                        <p><a href="{{url_for('article', id=article.id)}}" class="btn btn-outline-dark rounded-pill"
+                                target="_blank">Read More <span class=""></span></a></p>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

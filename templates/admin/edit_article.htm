@@ -1,0 +1,33 @@
+{% extends "layout.htm" %}
+
+
+{% block body%}
+<div class="container mt-5 pt-5 pb-5">
+    <h1>Edit Articles</h1>
+    <form method="post" action="" encrypt="multipart/form-data">
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" name="photo" id="image" value="<%=(request.form('article_image')%>" accept="image/*" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="{{article_title}}"
+                placeholder="This is my title">
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" name="author" value="{{article_author}}" id="author" placeholder="John doe" required>
+        </div>
+        <div class="form-group">
+            <label for="body">Body</label>
+            <textarea name="body" class="form-control" id="body" placeholder=".....">{{article_body}}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="tag">Tags:</label>
+            <input type="text" class="form-control" name="tags" id="tag" value="{{article_category}}" placeholder="" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+{% endblock %}

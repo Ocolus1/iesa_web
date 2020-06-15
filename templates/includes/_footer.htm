@@ -1,0 +1,171 @@
+<style type="text/css">
+    /* Start footer */
+    footer {
+        padding-top: 1rem;
+        width: 100%;
+        text-align: left;
+        color: white;
+        background-color: #0e1a40;
+        font-family: DroidSerif;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
+    /* the social links */
+    .social, li {
+        list-style-type: none;
+        text-align: left;
+    }
+
+    .social li {
+        display: inline;
+        text-align: left;
+    }
+    .social img {
+        text-align: left;
+    }
+
+    .social i {
+        font-size: 120%;
+        margin: 1% 4% 1% 0%;
+        padding: 5% 5% 5% 5%;
+        color: #696969;
+    }
+
+    .social i:hover {
+        color: lightblue;
+    }
+    /* The newsletter */
+    .newsletter {
+        width: 100%;
+        height: 200%;
+        padding-top: 5rem;
+    }
+    /* the subscribe button */
+    #nl-btn:hover {
+        color: black;
+        background-color: white;
+    }
+
+    #nl-btn {
+        padding: .5rem 3rem;
+        color: white;
+        background-color: #37a3e8;
+    }
+
+    #nl-p {
+        font-size: 170%;
+        font-weight: 600;
+    }
+
+    #nl-input {
+        font-size: 120%;
+        width: 100%;
+    }
+    #footer-text {
+        text-align: left;
+        color: #696969;
+    }
+    #footer-text li, #icon-col li  {
+        text-align: left;
+    }
+    .th_links {
+        color: #696969;
+    }
+    .footer {
+        background-color: #110c11;
+        color: #f0f0f0;
+        text-align: center;
+        height: 2rem;
+    }
+    /* Media Queries */
+
+    @media screen and (max-width: 768px) {
+        
+        #contacts {
+            padding-left: 4rem;
+        }
+        .newsletter {
+            padding-top: 1.5rem;
+        }
+    }
+</style>
+<footer class="">
+    <div class="container">
+        <!--monthly newsletter-->
+        <div class="newsletter">
+            <div id="nl-div" class="">
+                <form action="/footer" method="POST">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <p id="nl-p" class="mr-3 ">Subcribe To Our Newsletter</p>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                            <input type="email" name="email" id="nl-input" class="form-control rounded-pill form-input"
+                                placeholder="   Your Email" required>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <input type="submit" value="Subscribe" class="btn rounded-pill" id="nl-btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr class="container">
+        <div id="footer-text" class="row pt-5">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div id="icon-col">
+                    <ul>
+                        <li class="mr-4">
+                            <a class="text-left" href="/">
+                                <img src="/static/img/iesa_logo-.png" alt="iesa_logo" >
+                            </a>
+                        </li><br><br>
+                        <li>
+                            <p>Engineering for Higher Productivity</p>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li class="">
+                            <a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="">
+                            <a class="social-link" href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li class="">
+                            <a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="">
+                            <a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <ul class="text-left">
+                    <li class="text-white"><h2>Links</h2></li><br>
+                    <li><a class="th_links" href="/">Home</a></li>
+                    <li><a class="th_links" href="/executives">Executives</a></li>
+                    <li><a class="th_links" href="/about">About</a></li>
+                    <li><a class="th_links" href="/gallery">Gallery</a></li>
+                    <li><a class="th_links" href="/event">Event</a></li>
+                    <li><a class="th_links" href="/articles">Blog</a></li>
+                    <!-- <li><a class="th_links" href="#">Contact Us</a></li><br> -->
+                    <li><a class="th_links" href="/alumi">Alumni</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-4" id="contacts">
+                <h2 class="text-white">Contacts</h2><br>
+                <div class="text-left">
+                    <p>Ind. & Prod. Engr.<br> Building, Faculty of Technology,<br> University of Ibadan</p><br>
+                    <p>+234 909 543 8950</p><br>
+                    <p>iesa.ui@gmail.com</p><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; IESA 2019  All Right Reserved</p>
+    </div>
+</footer>

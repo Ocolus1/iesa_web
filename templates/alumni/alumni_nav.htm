@@ -1,0 +1,170 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    .nav-section {
+        width: 100%;
+        height: 34rem;
+        background-image: url(/static/a_img/team_photo.jpeg);
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 0;
+    }
+
+    nav {
+        width: 100%;
+        color: white;
+    }
+
+    .navbar-nav {
+        margin-right: 3rem;
+    }
+
+    .navbar-brand {
+        margin-left: 1rem;
+    }
+
+    .navbar-brand p {
+        color: white;
+        font-size: 200%;
+        padding: 0;
+    }
+
+    .navbar-brand small {
+        font-size: 95%;
+        padding: 0rem 2rem;
+        color: white;
+    }
+
+    .nav_lin {
+        margin-top: -1rem;
+        margin: 0rem 1rem;
+    }
+
+    #sign_up {
+        color: white;
+        background-color: #0e1a40;
+    }
+
+
+    @media screen and (max-width: 1024px) {
+        .navbar-nav {
+            margin-right: 0;
+        }
+
+        .navbar-brand {
+            margin-left: .5rem;
+        }
+
+        .navbar-brand p {
+            font-size: 150%;
+        }
+
+        .navbar-brand small {
+            padding: 0rem 1rem;
+        }
+
+        .nav_lin {
+            margin-top: -2rem;
+            margin: 0rem 1rem;
+        }
+
+        #sign_up {
+            padding: .5rem;
+        }
+
+        #sign_in {
+            padding: .5rem;
+        }
+    }
+
+    @media screen and (max-width :992px) {
+        .navbar-brand {
+            background-color: green;
+        }
+
+        .nav-section {
+            height: 33rem;
+        }
+    }
+
+    @media screen and (max-width :768px) {
+        .navbar-brand {
+            background-color: blue;
+        }
+
+        .nav-section {
+            height: 22rem;
+        }
+
+        .navbar-toggler-icon {
+            font-size: 75%;
+        }
+
+        .navbar-brand p {
+            font-size: 130%;
+            font-weight: 500;
+        }
+
+        .navbar-brand small {
+            display: none;
+        }
+
+        #sign_up {
+            width: 5rem;
+            padding: .5rem;
+            margin: .5rem;
+        }
+
+        #sign_in {
+            width: 5rem;
+            padding: .5rem;
+            margin: .5rem;
+        }
+
+    }
+
+    @media screen and (max-width :576px) {
+        .navbar-brand {
+            background-color: yellow;
+        }
+
+        .nav-section {
+            height: 20rem;
+        }
+
+    }
+</style>
+
+<div class="nav-section">
+    {% include "includes/_messages.htm"%}
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/alumni_dashboard">
+            <p>The Alumni Platform</p>
+            <small class="navbar-brand-small">for the alumnis</small>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link text-white nav_lin" href="/alumni_about">ABOUT US
+                        </a>
+                <a class="nav-item nav-link text-white nav_lin" href="#">BLOG</a>
+                <a class="nav-item nav-link text-white nav_lin" href="/alumni_forum">FORUM</a>
+                <a class="nav-item nav-link nav_lin btn-success rounded-pill text-white" id="sign_in"
+                    href="/alumni_login">SIGN IN</a>
+                <a class="nav-item nav-link nav_lin rounded-pill" id="sign_up" href="/alumni_reg">SIGN UP</a>
+            </div>
+        </div>
+    </nav>
+</div>

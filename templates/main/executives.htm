@@ -1,0 +1,296 @@
+{% extends "layout.htm" %}
+
+{% set active_page = "executives" %}
+
+{% block body %}
+<style>
+    #first-div {
+        background-color: #fff;
+        color: #333;
+        font-family: Poppins;
+        font-style: normal;
+        padding-bottom: 5rem;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 70%;
+        transform: translateY(-50%);
+    }
+
+    .carousel-caption h2 {
+        font-size: 300%;
+        font-weight: 500;
+        text-shadow: 1px 1px 15px #000;
+    }
+
+    .card {
+        color: black;
+        text-decoration: none;
+        background-color: white;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    .card img {
+        width: 90%;
+        height: 20rem;
+        padding: .5rem;
+        margin: 1rem;
+        max-width: 100%;
+        transition: transform 2s;
+    }
+
+    .card img:hover {
+        -ms-transform: scale(1.1);
+        /* IE 9 */
+        -webkit-transform: scale(1.1);
+        /* Safari 3-8 */
+        transform: scale(1.1);
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+
+    .team_img {
+        width: 100%;
+        max-width: 100%;
+        height: 28rem;
+    }
+
+    @media screen and (max-width: 992px) {
+        .card img {
+            width: auto;
+            height: 20rem;
+        }
+
+        .team_img {
+            height: 25rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .card img {
+            width: auto;
+            height: auto;
+        }
+
+        .team_img {
+            height: 20rem;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .team_img {
+            height: 17rem;
+        }
+    }
+</style>
+
+<div id="first-div">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./static/img/team.jpg" class="team_img" alt="team photo">
+                <div class="carousel-caption d-none d-sm-block">
+                    <h2>Meet Our Executives</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start three column card -->
+    <div class="container-fluid pt-5 padding">
+        <div class="row padding">
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/obi.jpg" class="card-img-top im" alt="obinna picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Ugwu Obinna</h5>
+                        <p class="card-text">
+                            President
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/oore.jpg" class="card-img-top im" alt="oore picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Akinrinola Ooreoluwa</h5>
+                        <p class="card-text">
+                            Vice President
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/khalid.jpg" class="card-img-top im" alt="khalid picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Bello Khalid</h5>
+                        <p class="card-text">
+                            General Secretary
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row padding">
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/francis.jpg" class="card-img-top im" alt="kelechi picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Kelechi Francis</h5>
+                        <p class="card-text">
+                            Head, Conference Committee
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/grace.jpg" class="card-img-top im" alt="Grace picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Grace Fadeyi</h5>
+                        <p class="card-text">
+                            Editor-in-Chief
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/hillary.jpg" class="card-img-top im" alt="hillary picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Orefo Hilary</h5>
+                        <p class="card-text">
+                            Chairman, Freshers Committee
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row padding">
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/kenway.jpg" class="card-img-top im" alt="kenway picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Kenway- Davidson King</h5>
+                        <p class="card-text">
+                            Head, Tech. Committee
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/edeh.jpg" class="card-img-top im" alt="edeh picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Edeh Janet</h5>
+                        <p class="card-text">
+                            Financial Secretary
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/bukola.jpg" class="card-img-top im" alt="bukola picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Ayangunna Bukola</h5>
+                        <p class="card-text">
+                            Chairperson, Social Committee
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row padding">
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/feyi.jpg" class="card-img-top im" alt="feyi picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Junaid Feyi</h5>
+                        <p class="card-text">
+                            Chairperson, Electoral Committee
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/kunle.jpg" class="card-img-top im" alt="kunle picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Adeosun Olakunle</h5>
+                        <p class="card-text">
+                            Head, Alumni $ External Relations
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 temp">
+                <div class="card">
+                    <img src="./static/img/ope.jpg" class="card-img-top im" alt="ope picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">Elusakin Opeyemi Olaoluwa</h5>
+                        <p class="card-text">
+                            Public Relations Officer
+                        </p>
+                        <a href="#" class="executives_links">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 temp">
+            <div class="card" id="last_card">
+                <img src="./static/img/tosin.jpg" class="card-img-top im" alt="tosin picture">
+                <div class="card-body text-center">
+                    <h5 class="card-title font-weight-bold">Ogundinmu Oluwatosin</h5>
+                    <p class="card-text">
+                        Assitant General Secretary
+                    </p>
+                    <a href="#" class="executives_links">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

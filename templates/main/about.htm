@@ -1,0 +1,166 @@
+{% extends "layout.htm" %}
+
+{% set active_page = "about" %}
+
+{% block body %}
+<style>
+#first-div{
+    background-color: #fff;
+    color: #333;
+    font-family: Poppins;
+    font-style: normal;
+}
+.team_img {
+    width: 100%;
+    max-width: 100%;
+    height: 29rem;
+}
+h1 {
+    text-align: center;
+    font-size: 250%;
+    padding: 4rem;
+    font-weight: 700;
+}
+h3 {
+    font-size: 250%;
+    padding: 1rem;
+    color: #333333;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+#left-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 1rem 9rem 1rem;
+}
+.im {
+    width: 80%;
+    height: 80%;
+}
+#right-col {
+    padding-bottom: 7rem;
+}
+.col-lg-6 p {
+    text-align: justify;
+    width: 20rem;
+}
+#btn {
+    color: white;
+    background-color: #37a3e8;
+    margin: 1rem;
+    margin-bottom: 7rem;
+}
+#btn:hover {
+    color: black;
+    background-color: white;
+}
+.carousel-caption {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+}
+.carousel-caption h2 {
+    font-size: 300%;
+    font-weight: 500;
+    text-shadow: 1px 1px 15px #000;
+}
+@media screen and (max-width: 992px) {
+    .team_img {
+        width: 100%;
+        max-width: 100%;
+        height: 25rem;
+    }
+    h1 {
+        text-align: center;
+        font-size: 200%;
+        padding: 2rem;
+        font-weight: 700;
+    }
+    h3 {
+        font-size: 200%;
+        padding: .6rem;
+    }
+    #left-col {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+    }
+    .im {
+        width: 90%;
+        height: 80%;
+    }
+    #right-col {
+        padding-bottom: 1rem;
+    }
+    .col-lg-6 p {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+    #btn {
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        padding: 1rem;
+        font-weight: 500;
+    }
+    h3 {
+        padding: .5rem;
+    }
+
+    .team_img {
+        width: 100%;
+        max-width: 100%;
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .team_img {
+        width: 100%;
+        max-width: 100%;
+        height: 17rem;
+    }
+}
+</style>
+
+<div id="first-div">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./static/img/team.jpg" class="team_img" alt="team photo">
+                <div class="carousel-caption d-none d-sm-block">
+                    <h2>About Us</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Engineering for Higher Productivity</h1>
+    <!-- Start two column -->
+    <div class="row padding">
+        <div class="col-lg-6" id="left-col">
+            <div id="inner-div" class="">
+                <h3>Our Mission</h3><br>
+                <p class="">
+                    The mission of the department is to provide the highest
+                    of Industrial and Production Engineering education by
+                    stimulating discovery, integration, application and communication of knowledge.
+                </p><br>
+                <a href="#"><button class="btn rounded-pill" id="btn" >⚙ All about Optimisation... ⚙</button></a><br>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center" id="right-col">
+            <img src="{{ url_for('static',filename = 'img/brand.jpg') }}" alt="brand picture" class="im">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
