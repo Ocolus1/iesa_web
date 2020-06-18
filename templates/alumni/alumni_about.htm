@@ -1,0 +1,87 @@
+{% extends "alumni/alumni_base.htm" %}
+
+{% set active_page = "about" %}
+
+{% block body %}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav-section {
+            width: 100%;
+            height: 6rem;
+            background-image: none;
+            margin-bottom: 0;
+        }
+
+        nav {
+            background-color: black;
+            opacity: .5;
+        }
+
+
+        /* section_one  */
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            padding: 3rem 0rem;
+            margin: 2.5rem 0rem;
+            background-color: white;
+        }
+
+        .inner-wrapper {
+            background-color: white;
+            padding: 2rem;
+        }
+
+        /*#img_div_wrapper {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: -5%;
+            transform: translateY(-40%);
+            margin-bottom: -5rem;
+            color: #f0f0f0;
+            background-color: #2d56a7;
+            opacity: 0.8;
+        }*/
+    </style>
+
+    
+    <div class="wrapper">
+        <div class="container" id="img_div_wrapper">
+            <div class="shadow-lg rounded inner-wrapper">
+                <h1 class="text-center">How It All Started</h1>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Dolorem, magni. Vitae maxime natus sapiente nobis, minima 
+                    culpa accusamus eaque consequatur quibusdam, 
+                    doloremque, non molestiae facere labore praesentium nulla. Facilis, sit?
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolorem, magni. Vitae maxime natus sapiente nobis, minima
+                    culpa accusamus eaque consequatur quibusdam,
+                    doloremque, non molestiae facere labore praesentium nulla. Facilis, sit?
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolorem, magni. Vitae maxime natus sapiente nobis, minima
+                    culpa accusamus eaque consequatur quibusdam,
+                    doloremque, non molestiae facere labore praesentium nulla. Facilis, sit?
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolorem, magni. Vitae maxime natus sapiente nobis, minima
+                    culpa accusamus eaque consequatur quibusdam,
+                    doloremque, non molestiae facere labore praesentium nulla. Facilis, sit?
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

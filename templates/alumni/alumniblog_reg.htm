@@ -1,0 +1,104 @@
+{% extends "alumni/alumni_base.htm" %}
+
+
+{% block body %}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+
+    .nav-section {
+        width: 100%;
+        height: 6rem;
+        background-image: none;
+        margin-bottom: 0;
+    }
+
+    nav {
+        background-color: black;
+        opacity: .5;
+    }
+
+    .outer-wrapper {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        margin: 0;
+        padding: 10%;
+    }
+
+    .wrapper {
+        width: 45rem;
+        height: auto;
+        border: 1px solid rgb(206, 203, 203);
+        padding: 0;
+        margin: 0;
+    }
+
+    .sign_in_div {
+        height: 10rem;
+        background-image: url(/static/a_img/bg-02.jpg);
+        background-position: center center;
+        background-size: cover;
+        padding: 0;
+    }
+
+    .sign_in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 200%;
+        font-weight: 600;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+    }
+
+    .form-control {
+        border: none;
+        border-bottom: 1px solid rgb(206, 203, 203);
+        border-radius: 0;
+    }
+
+    label,
+    .form-control {
+        display: inline;
+    }
+
+    .form-group {
+        padding: 0;
+    }
+</style>
+<div class="mt-5 mb-5 outer-wrapper">
+    <div class="shadow-lg mb-5 bg-white rounded wrapper">
+        <div class="sign_in_div">
+            <span class="sign_in">
+                SIGN IN
+            </span>
+        </div>
+        <div class="container">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="user">Username</label>
+                    <input type="text" class="form-control" name="username" id="user" aria-describedby="textHelp">
+                </div>
+                <div class="form-group">
+                    <label for="passwd">Password</label>
+                    <input type="password" name="password" class="form-control" id="passwd">
+                </div>
+                <button type="submit" class="btn btn-success rounded-pill ml-2 px-5">sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

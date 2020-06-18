@@ -1,9 +1,24 @@
-{% extends "layout.htm" %}
+{% extends "alumni/alumni_base.htm" %}
 
-{% set active_page = "articles" %}
+{% set active_page = "blog" %}
 
 {% block body %}
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .nav-section {
+        width: 100%;
+        height: 6rem;
+        background-image: none;
+        margin-bottom: 0;
+    }
+
+    nav {
+        background-color: black;
+        opacity: .5;
+    }
     #first-div {
         background-color: #fff;
         color: #333;
@@ -11,7 +26,8 @@
         font-style: normal;
     }
 
-    h2, h3 {
+    h2,
+    h3 {
         color: #333333;
         font-family: Raleway;
         font-style: normal;
@@ -98,7 +114,7 @@
     .t_a {
         border: 1px solid #333;
     }
-    
+
     .comment {
         color: #333333;
         font-family: Raleway;
@@ -109,6 +125,11 @@
 
     .comment_msg {
         font-size: 130%;
+    }
+
+    .d_body {
+    display: block;
+    font-size: 100%;
     }
 
     .date {
@@ -140,6 +161,7 @@
         .team_img {
             height: 20rem;
         }
+
         .d_body {
         display: block;
         font-size: 100%;
@@ -172,52 +194,55 @@
                     <div class="col-lg-8 px-md-5">
                         <div class="row pt-md-4 mt-5">
                             <div>
-                                <img src="{{ url_for('send_image', filename=article.image) }}" alt="{{article.image}}"
+                                <img src="{{ url_for('a_send_image', filename=article.image) }}" alt="{{article.image}}"
                                     class="rounded mx-auto d-block img-fluid d_img">
+                                <h1 class="">{{ article.title }}</h1>
                             </div>
-                            <h1 class="">{{ article.title }}</h1>
-                            <div class="mt-5">
-                                Category : 
-                                {% for art in article.tags%}
-                                    <a href="{{url_for('article_tag', name=art.name)}}">{{art.name}}</a>
+                            
+                            <p class="mt-5">
+                                Category :
+                                {% for art in article.a_tags%}
+                                <a href="{{url_for('a_tag', name=art.name)}}">{{art.name}}</a>
                                 {% endfor %},
-                                wrriten by <i class="fas fa-user-tie"></i> {{article.author}}, <i class="fa fa-comments-o"></i>{{article.comments}} comments, 
+                                wrriten by <i class="fas fa-user-tie"></i> {{article.author}}, 
+                                <i class="fa fa-comments-o"></i>{{article.comments}} comments,
                                 <i class="fa fa-eye"></i>{{article.views}}
                                 views
-                            </div><br>
+                            </p>
                             <div class="d_body">
                                 {{ article.body | safe }}
                             </div>
                             <div class="mb-5 mt-5">
                                 <div class="tagcloud">
                                     Tags:
-                                    
-                                    {% for art in article.tags%}
-                                        <a href="{{url_for('article_tag', name=art.name)}}">{{art.name}}</a>
+
+                                    {% for art in article.a_tags%}
+                                    <a href="{{url_for('a_tag', name=art.name)}}">{{art.name}}</a>
                                     {% endfor %}
                                     
                                 </div>
                             </div>
-    
-    
+
+
                             <div class="pt-5 mt-5">
                                 <h3 class="mb-5 font-weight-bold">{{article.comments}} Comments</h3>
                                 <div class="">
                                     {% for comment in comments %}
                                     <p class="comment">
-                                        <div class=" comment-body">
-                                            <h3>{{comment.author}}</h3>
-                                            <div class="date"> 
-                                                <p>{{comment.pub_date.strftime('%B %d, %Y')}} at {{comment.pub_date.strftime('%I:%M %p')}}</p>
-                                            </div>
-                                            <p class="p-2 comment_msg">{{comment.message}}</p>
-                                            <!-- <p><a href="#" class="reply">Reply</a></p> -->
+                                    <div class=" comment-body">
+                                        <h3>{{comment.author}}</h3>
+                                        <div class="date">
+                                            <p>{{comment.pub_date.strftime('%B %d, %Y')}} at
+                                                {{comment.pub_date.strftime('%I:%M %p')}}</p>
                                         </div>
+                                        <p class="p-2 comment_msg">{{comment.message}}</p>
+                                        <!-- <p><a href="#" class="reply">Reply</a></p> -->
+                                    </div>
                                     </p>
                                     {% endfor %}
                                 </div>
                                 <!-- END comment-list -->
-    
+
                                 <div class="comment-form-wrap pt-5 mb-5">
                                     <h3 class="mb-5">Leave a comment</h3>
                                     <form action="#" class="p-3 p-md-5 bg-light" method="post">
@@ -237,9 +262,10 @@
                                                 class="form-control"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <input type="submit" value="Post Comment" id="comment_btn" class="btn py-3 px-4">
+                                            <input type="submit" value="Post Comment" id="comment_btn"
+                                                class="btn py-3 px-4">
                                         </div>
-    
+
                                     </form>
                                 </div>
                             </div>
@@ -247,37 +273,42 @@
                     </div>
                     <div class="col-lg-4 sidebar pl-5 px-md-5 pt-5 ">
                         <div class="sidebar-box pt-md-4">
-                            <form action="/search" method="GET" class="form">
+                            <form action="/a_search" method="GET" class="form">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="keyword" placeholder="Search here..." aria-label="Search here"
+                                        <input type="text" class="form-control" name="keyword"
+                                            placeholder="Search here.." aria-label="Search here"
                                             aria-describedby="button-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline" type="submit" id="button-addon2">Search</button>
+                                            <button class="btn btn-outline" type="submit"
+                                                id="button-addon2">Search</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <div class="sidebar-box">
-                            <h4 class="display-5">Categories</h3><hr/>
-                            <ul class="categories">
-                                {% for tag in tags %}
-                                {% if tag %}
-                                <a class="btn btn-outline p-1 m-1 t_a" href="{{url_for('article_tag', name=tag.name)}}" target="_blank">
-                                    {{ tag.name }}
-                                </a>
-                                {% else %}
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
+                            <h4 class="display-5">Categories</h3>
+                                <hr />
+                                <ul class="categories">
+                                    {% for tag in tags %}
+                                    {% if tag %}
+                                    <a class="btn btn-outline p-1 m-1 t_a"
+                                        href="{{url_for('a_tag', name=tag.name)}}" target="_blank">
+                                        {{ tag.name }}
+                                    </a>
+                                    {% else %}
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
                         </div>
-    
+
                         <div class="sidebar-box ">
-                            <h3 class="sidebar-heading">Recent Articles</h3><hr/>
+                            <h3 class="sidebar-heading">Recent Articles</h3>
+                            <hr />
                             {% for article in articles[:3] %}
                             <div class="block-21 mb-4 d-flex">
-                                <img class="mr-4" src="{{url_for('send_image', filename=article.image)}}"
+                                <img class="mr-4" src="{{url_for('a_send_image', filename=article.image)}}"
                                     alt="{{article.image}}" style="width: 6rem;height:6rem;">
                                 <div class="text">
                                     <h5 class="display-5">
@@ -285,7 +316,8 @@
                                     </h5>
                                     <div class="text">
                                         <div>
-                                            <i class="far fa-calendar-alt"></i>{{article.date_created.strftime('%B %d, %Y')}}
+                                            <i
+                                                class="far fa-calendar-alt"></i>{{article.date_created.strftime('%B %d, %Y')}}
                                         </div>
                                         <div>
                                             <i class="fas fa-user-tie"></i>{{article.author}}

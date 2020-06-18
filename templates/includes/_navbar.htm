@@ -13,13 +13,6 @@
         font-weight: 700;
         font-display: swap;
     }
-    /*.nav-item:active {
-        color: #00aaad;
-    }
-
-    .nav-item:hover {
-        color: #00aaad;
-    }*/
 
     #sticky a {
         color: white;
@@ -28,7 +21,6 @@
     /* Media Queries */
     @media screen and (max-width: 992px) {
         #navbar-brand {
-            background-color: green;
             margin-left: 2rem;
         }
         .nav-item {
@@ -38,7 +30,6 @@
 
     @media screen and (max-width: 768px) {
         #navbar-brand {
-            background-color: blue;
             margin-left: 0;
         }
         .navbar-toggler-icon {
@@ -47,9 +38,6 @@
     }
 
     @media screen and (max-width: 576px) {
-        #navbar-brand {
-            background-color: yellow;
-        }
 
         .navbar-bttn {
             display: block;
@@ -69,18 +57,18 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mx-auto">
             {% set navbar_menus = [
-                        ('/', 'home', 'Home'),
-                        ('/executives', 'executives', 'Executives'),
-                        ('/about', 'about', 'About'),
-                        ('/gallery', 'gallery', 'Gallery'),
-                        ('/event', 'event', 'Event'),
-                        ('/articles', 'articles', 'Blog'),
-                        ('/alumni_dashboard', 'alumni', 'Alumni'),
+                        ('/', 'home', 'Home', '_self'),
+                        ('/executives', 'executives', 'Executives', '_self'),
+                        ('/about', 'about', 'About', '_self'),
+                        ('/gallery', 'gallery', 'Gallery', '_self'),
+                        ('/event', 'event', 'Event', '_self'),
+                        ('/articles', 'articles', 'Blog', '_self'),
+                        ('/alumni_login', 'alumni', 'Alumni', '_blank'),
                         ] -%}
             {% set active_page = active_page|default('home') -%}
-            {% for href, id, caption in navbar_menus %}
+            {% for href, id, caption, target in navbar_menus %}
             <li class="nav-item">
-                <a class="nav-link {% if id == active_page %} active {% endif%}" href="{{ href }}">
+                <a class="nav-link {% if id == active_page %} active {% endif%}" target="{{target}}" href="{{ href }}">
                     {{ caption }}
                 </a>
             </li>

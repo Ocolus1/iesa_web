@@ -1,0 +1,109 @@
+{% extends "alumni/alumni_base.htm" %}
+
+{% set active_page = "forum" %}
+
+{% block body %}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .nav-section {
+        width: 100%;
+        height: 6rem;
+        background-image: none;
+        margin-bottom: 0;
+    }
+
+    nav {
+        background-color: black;
+        font-family: DroidSerif;
+        opacity: 0.5;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        padding: 0rem 0rem;
+        margin: 2.5rem 0rem;
+        background-color: white;
+    }
+
+    .hello {
+        background-color: #37a3e8;
+        color: white;
+    }
+
+    .date {
+        font-size: 90%;
+        font-family: DroidSerif;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
+</style>
+
+
+<div class="wrapper">
+    <p class="fixed-bottom">
+        <button class="btn  float-right rounded-pill mr-2 hello" type="button" data-toggle="collapse" data-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            <span><i class="fa fa-commenting-o"></i></span>
+        </button>
+    </p>
+    <div class="collapse fixed-bottom m-5" id="collapseExample">
+        <div class="card card-body float-right">
+            <form action="" class=" " method="post">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="name">Username *</label>
+                        <input type="text" class="form-control" name="username" id="name">
+                    </div>
+                    <div class="form-group col">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" name="email" id="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="20" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="SEND" class="btn py-1 px-1 btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+<div class="container">
+    <h2>Ask any Question on your mind</h2>
+</div>
+<div class="col-5">
+    <ul class="comment-list">
+        {% for forum in forums %}
+        <li class="comment">
+            <div class="pb-5 comment-body">
+                <div class="">
+                    <div class="">
+                        <h6>{{forum.username}}</h6>
+                    </div>
+                    <div class="date">
+                        <p>{{forum.pub_date.strftime('%B %d, %Y')}} at
+                            {{forum.pub_date.strftime('%I:%M %p')}}</p>
+                    </div>
+                </div>
+                <div class="">{{forum.message}}</div>
+                <!-- <small>{{forum.pub_date.strftime('%B %d, %Y')}}</small> -->
+                <!-- <p><a href="#" class="reply">Reply</a></p> -->
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- END comment-list -->
+</div>
+
+{% endblock %}
